@@ -2,5 +2,5 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://tudorpopa.com",
+  site: "https://doidor.github.io",
 });
