@@ -1,6 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+	import Layout from '../layouts/Layout.astro';
+	import Card from '../components/Card.astro';
+	import * as packageMeta from '../../package.json'
+
+	const { version } = packageMeta;
 ---
 
 <Layout title="Tudor Popa">
@@ -30,6 +33,6 @@ import Card from '../components/Card.astro';
 			&copy; Tudor Popa. Design:
 			<a href="http://html5up.net">HTML5 UP</a>.
 		</span>
-		<span id="version"></span>
+		<span id="version">{version}</span>
 	</footer>
 </Layout>

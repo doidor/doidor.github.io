@@ -1,12 +1,29 @@
 ---
-import Scripts from "../components/Scripts.astro";
-import GA from "../components/GA.astro";
+  import Scripts from "../components/Scripts.astro";
+  import GA from "../components/GA.astro";
 
-export interface Props {
-  title: string;
-}
+  export interface Props {
+    title: string;
+  }
 
-const { title } = Astro.props as Props;
+  const { title } = Astro.props as Props;
+
+  const BG_COLORS = [
+    "#302b63",
+    "#4286f4",
+    "#373B44",
+    "#4A00E0",
+    "#2ebf91",
+    "#8360c3",
+    "#43C6AC",
+    "#516395"
+  ];
+
+  const currentColor = BG_COLORS[
+    Math.floor(Math.random() * BG_COLORS.length)
+  ];
+  const bgColor = `background: ${currentColor};`;
+  const iconUrl = `/assets/ico/favicon_${currentColor.substring(1)}.ico`;
 ---
 
 <!DOCTYPE html>
@@ -16,21 +33,21 @@ const { title } = Astro.props as Props;
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <GA />
   <title>{title}</title>
-  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Tudor Popa - Passionate about software engineering with a strong emphasis on software architecture and artificial intelligence." />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link type="image/x-icon" rel="shortcut icon" href={iconUrl} />
   <noscript>
     <link rel="stylesheet" href="assets/css/noscript.css" />
   </noscript>
 </head>
 
-<body class="is-preload">
+<body>
   <div id="wrapper">
-    <div id="bg"></div>
+    <div id="bg" style={bgColor}></div>
     <div id="overlay"></div>
     <div id="main">
       <slot />
