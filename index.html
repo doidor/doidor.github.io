@@ -13,21 +13,21 @@
     gtag("config", "UA-132505107-1");
 </script>
   <title>Tudor Popa</title>
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Tudor Popa - Passionate about software engineering with a strong emphasis on software architecture and artificial intelligence.">
   <link rel="stylesheet" href="assets/css/main.css">
   <link href="assets/fontawesome/css/all.min.css" rel="stylesheet">
+  <link type="image/x-icon" rel="shortcut icon" href="/assets/ico/favicon_43C6AC.ico">
   <noscript>
     <link rel="stylesheet" href="assets/css/noscript.css">
   </noscript>
 
 </head>
 
-<body class="is-preload">
+<body>
   <div id="wrapper">
-    <div id="bg"></div>
+    <div id="bg" style="background: #43C6AC;"></div>
     <div id="overlay"></div>
     <div id="main">
       <header id="header">
@@ -60,73 +60,11 @@
 			&copy; Tudor Popa. Design:
 			<a href="http://html5up.net">HTML5 UP</a>.
 		</span>
-		<span id="version"></span>
+		<span id="version">1.0.1</span>
 	</footer>
     </div>
   </div>
   <script>
-    function consoleMessage() {
-        const currentColor = `background: #${window.currentColor}; color: white;`;
-
-        const style = {
-            header: `text-shadow: 1px 1px gray; font-size: 25px; ${currentColor}`,
-            normal: `font-weight: bold; font-size: 14px;`
-        };
-
-        console.log("%cHello there!", style.header);
-        console.log(
-            "%cSince you've also found this part of the site, let me just give you my links again:",
-            style.normal
-        );
-        console.log("");
-        console.log(
-            "%c- Resume: https://github.com/doidor/resume/blob/master/resume.pdf",
-            style.normal
-        );
-        console.log(
-            "%c- LinkedId: https://www.linkedin.com/in/tdrpopa/",
-            style.normal
-        );
-        console.log("%c- Mail: tdr.popa@gmail.com", style.normal);
-        console.log("%c- Github: https://github.com/doidor", style.normal);
-        console.log("%c- Medium: https://medium.com/@tdr.popa", style.normal);
-        console.log("");
-        console.log("%cCheers!", style.normal);
-    }
-
-    const BG_COLORS = [
-        "#302b63",
-        "#4286f4",
-        "#373B44",
-        "#4A00E0",
-        "#2ebf91",
-        "#8360c3",
-        "#43C6AC",
-        "#516395"
-    ];
-
-    window.onload = function () {
-        document.body.classList.remove("is-preload");
-        const bg = document.querySelector("#bg");
-        const currentColor = BG_COLORS[
-            Math.floor(Math.random() * BG_COLORS.length)
-        ].substr(1);
-        bg.style.background = `#${currentColor}`;
-
-        var link =
-            document.querySelector("link[rel*='icon']") ||
-            document.createElement("link");
-        link.type = "image/x-icon";
-        link.rel = "shortcut icon";
-        link.href = `/assets/ico/favicon_${currentColor}.ico`;
-
-        document.getElementsByTagName("head")[0].appendChild(link);
-
-        window.currentColor = currentColor;
-
-        consoleMessage();
-    };
-
     window.ontouchmove = function () {
         return false;
     };
