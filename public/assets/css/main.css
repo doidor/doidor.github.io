@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
 
 /*
 	Aerial by HTML5 UP
@@ -127,7 +127,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -194,7 +194,7 @@ input,
 select,
 textarea {
   color: #fff;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 15pt;
   font-weight: 300 !important;
   letter-spacing: -0.025em;
@@ -308,7 +308,7 @@ a:hover {
   transform: translate3d(0, 0, 0);
   /* Set your background with this */
 
-  background: #348cb2 url("images/bg.jpg") bottom left;
+  background: #348cb2 url('images/bg.jpg') bottom left;
   background-repeat: repeat-x;
   height: 100%;
   left: 0;
@@ -434,7 +434,7 @@ a:hover {
   -ms-animation: overlay 0.5s 0.5s forwards;
   animation: overlay 0.5s 0.5s forwards;
   background-attachment: fixed, fixed;
-  background-image: url("images/overlay-pattern.png"), url("images/overlay.svg");
+  background-image: url('images/overlay-pattern.png'), url('images/overlay.svg');
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -458,7 +458,7 @@ a:hover {
 }
 
 #main:before {
-  content: "";
+  content: '';
   display: inline-block;
   height: 100%;
   margin-right: 0;
@@ -794,26 +794,10 @@ a:hover {
 /* Footer */
 
 #footer {
-  background-image: -moz-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5) 75%
-  );
-  background-image: -webkit-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5) 75%
-  );
-  background-image: -ms-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5) 75%
-  );
-  background-image: linear-gradient(
-    top,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5) 75%
-  );
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
   bottom: 0;
   cursor: default;
   height: 6em;

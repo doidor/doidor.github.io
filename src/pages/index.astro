@@ -1,38 +1,45 @@
 ---
-	import Layout from '../layouts/Layout.astro';
-	import Card from '../components/Card.astro';
-	import * as packageMeta from '../../package.json'
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import * as packageMeta from '../../package.json';
 
-	const { version } = packageMeta;
+const { version } = packageMeta;
 ---
 
 <Layout title="Tudor Popa">
-	<!-- Header -->
-	<header id="header">
-		<h1>Tudor Popa</h1>
-		<p>
-			Passionate about software engineering with a strong emphasis on
-			software architecture and artificial intelligence.
-		</p>
-		<nav>
-			<ul>
-				<Card body="Resume" href="https://github.com/doidor/resume/blob/master/resume.pdf" title="Resume"
-					iconClass="far fa-file-pdf" />
-				<Card body="LinkedIn" href="https://www.linkedin.com/in/tdrpopa/" title="LinkedIn"
-					iconClass="fab fa-linkedin" />
-				<Card body="Email" href="mailto:tdr.popa@gmail.com" title="Mail" iconClass="far fa-envelope" />
-				<Card body="Github" href="https://github.com/doidor" title="Github" iconClass="fab fa-github" />
-				<Card body="Medium" href="https://medium.com/@tdr.popa" title="Medium" iconClass="fab fa-medium-m" />
-			</ul>
-		</nav>
-	</header>
+  <!-- Header -->
+  <header id="header">
+    <h1>Tudor Popa</h1>
+    <p>
+      Passionate about software engineering with a strong emphasis on software architecture and artificial intelligence.
+    </p>
+    <nav>
+      <ul>
+        <Card
+          body="Resume"
+          href="https://github.com/doidor/resume/blob/master/resume.pdf"
+          title="Resume"
+          iconClass="far fa-file-pdf"
+        />
+        <Card
+          body="LinkedIn"
+          href="https://www.linkedin.com/in/tdrpopa/"
+          title="LinkedIn"
+          iconClass="fab fa-linkedin"
+        />
+        <Card body="Email" href="mailto:tdr.popa@gmail.com" title="Mail" iconClass="far fa-envelope" />
+        <Card body="Github" href="https://github.com/doidor" title="Github" iconClass="fab fa-github" />
+        <Card body="Medium" href="https://medium.com/@tdr.popa" title="Medium" iconClass="fab fa-medium-m" />
+      </ul>
+    </nav>
+  </header>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<span class="copyright">
-			&copy; Tudor Popa. Design:
-			<a href="http://html5up.net">HTML5 UP</a>.
-		</span>
-		<span id="version">{version}</span>
-	</footer>
+  <!-- Footer -->
+  <footer id="footer">
+    <span class="copyright">
+      &copy; Tudor Popa. Design:
+      <a href="http://html5up.net">HTML5 UP</a>.
+    </span>
+    <span id="version">{version}</span>
+  </footer>
 </Layout>
