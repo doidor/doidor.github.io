@@ -140,13 +140,7 @@ body.is-preload * {
   width: 100%;
 }
 
-/* Fade in animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(1em);
-  }
-  to {
+to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -154,7 +148,6 @@ body.is-preload * {
 
 /* Header */
 #header {
-  animation: fadeUp 0.6s 0.2s both ease-out;
   margin-bottom: 2rem;
 }
 
@@ -174,7 +167,6 @@ body.is-preload * {
 
 /* Bio */
 #about {
-  animation: fadeUp 0.6s 0.4s both ease-out;
   margin-bottom: 2rem;
 }
 
@@ -189,7 +181,6 @@ body.is-preload * {
   height: 1px;
   background: var(--border);
   margin: 2rem 0;
-  animation: fadeUp 0.6s 0.5s both ease-out;
 }
 
 /* Section labels */
@@ -212,7 +203,6 @@ body.is-preload * {
 
 /* Currently section */
 #currently {
-  animation: fadeUp 0.6s 0.55s both ease-out;
   margin-bottom: 2.5rem;
 }
 
@@ -234,7 +224,6 @@ body.is-preload * {
 
 /* Navigation links */
 #links {
-  animation: fadeUp 0.6s 0.7s both ease-out;
 }
 
 #links ul {
@@ -281,7 +270,6 @@ body.is-preload * {
   font-size: 0.75rem;
   color: var(--text-muted);
   opacity: var(--footer-opacity);
-  animation: fadeUp 0.6s 0.85s both ease-out;
 }
 
 #footer a {
