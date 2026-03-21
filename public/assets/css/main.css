@@ -107,12 +107,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Preload: hide animations until color is set */
-body.is-preload * {
-  animation: none !important;
-  transition: none !important;
-}
-
 /* Accent bar (replaces full-page bg) */
 #bg {
   position: fixed;
@@ -140,10 +134,6 @@ body.is-preload * {
   width: 100%;
 }
 
-to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Header */
