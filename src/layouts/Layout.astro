@@ -11,29 +11,25 @@ const { title } = Astro.props as Props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <GA />
     <title>{title}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Tudor Popa - Passionate about software engineering with a strong emphasis on software architecture and artificial intelligence."
+      content="Tudor Popa — Engineering leader building software and teams. Currently leading Fluent UI at Microsoft."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
   </head>
 
-  <body>
-    <div id="wrapper">
-      <div id="bg"></div>
-      <div id="overlay"></div>
-      <div id="main">
-        <slot />
-      </div>
+  <body class="is-preload">
+    <div id="bg"></div>
+    <div id="main">
+      <slot />
     </div>
     <script is:inline>
       const BG_COLORS = ['#302b63', '#4286f4', '#373B44', '#4A00E0', '#2ebf91', '#8360c3', '#43C6AC', '#516395'];
@@ -42,7 +38,7 @@ const { title } = Astro.props as Props;
       function consoleMessage(currentColor) {
         const consoleColor = `background: #${currentColor}; color: white;`;
         const style = {
-          header: `text-shadow: 1px 1px gray; font-size: 25px; ${consoleColor}`,
+          header: `text-shadow: 1px 1px gray; font-size: 25px; ${consoleColor} padding: 4px 12px;`,
           normal: `font-weight: bold; font-size: 14px;`,
         };
         console.log('%cHello there!', style.header);
@@ -52,10 +48,11 @@ const { title } = Astro.props as Props;
         );
         console.log('');
         console.log('%c- Resume: https://github.com/doidor/resume/blob/master/resume.pdf', style.normal);
-        console.log('%c- LinkedId: https://www.linkedin.com/in/tdrpopa/', style.normal);
+        console.log('%c- LinkedIn: https://www.linkedin.com/in/tdrpopa/', style.normal);
         console.log('%c- Mail: tdr.popa@gmail.com', style.normal);
-        console.log('%c- Github: https://github.com/doidor', style.normal);
+        console.log('%c- GitHub: https://github.com/doidor', style.normal);
         console.log('%c- Medium: https://medium.com/@tdr.popa', style.normal);
+        console.log('%c- YouTube: https://www.youtube.com/@doidor', style.normal);
         console.log('');
         console.log('%cCheers!', style.normal);
       }
@@ -64,6 +61,7 @@ const { title } = Astro.props as Props;
         document.body.classList.remove('is-preload');
         const bg = document.querySelector('#bg');
         bg.style.background = `#${currentColor}`;
+        document.documentElement.style.setProperty('--accent', `#${currentColor}`);
 
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
         link.type = 'image/x-icon';
@@ -75,13 +73,6 @@ const { title } = Astro.props as Props;
         window.currentColor = currentColor;
 
         consoleMessage(currentColor);
-      };
-
-      window.ontouchmove = function () {
-        return false;
-      };
-      window.onorientationchange = function () {
-        document.body.scrollTop = 0;
       };
     </script>
   </body>
