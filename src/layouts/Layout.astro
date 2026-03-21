@@ -17,7 +17,7 @@ const { title } = Astro.props as Props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Tudor Popa — Engineering leader building software and teams. Currently leading Fluent UI at Microsoft."
+      content="Tudor Popa - Engineering leader building software and teams. Currently leading Fluent UI at Microsoft."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,11 +27,33 @@ const { title } = Astro.props as Props;
   </head>
 
   <body class="is-preload">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
+    </button>
     <div id="bg"></div>
     <div id="main">
       <slot />
     </div>
     <script is:inline>
+      // Theme toggle
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelector('.theme-toggle').addEventListener('click', function() {
+            var current = document.documentElement.getAttribute('data-theme');
+            var isDark = current === 'dark' ||
+              (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            var next = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+          });
+        });
+      })();
+
       const BG_COLORS = ['#302b63', '#4286f4', '#373B44', '#4A00E0', '#2ebf91', '#8360c3', '#43C6AC', '#516395'];
       const currentColor = BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)].substr(1);
 
