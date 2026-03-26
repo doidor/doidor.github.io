@@ -138,7 +138,7 @@ body {
 
 /* Header */
 #header {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 #header h1 {
@@ -146,23 +146,24 @@ body {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 
 #header .role {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
 /* Bio */
 #about {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 #about p {
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.85;
   color: var(--text);
   max-width: 560px;
 }
@@ -170,7 +171,7 @@ body {
 .divider {
   height: 1px;
   background: var(--border);
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 /* Section labels */
@@ -180,7 +181,7 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -193,18 +194,18 @@ body {
 
 /* Currently section */
 #currently {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .about-grid {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.85rem;
 }
 
 .about-item {
   font-size: 0.9rem;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 .about-item .label {
@@ -219,7 +220,7 @@ body {
 #links ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
