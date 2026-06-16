@@ -1,4 +1,9 @@
 import { defineConfig } from '@doidor/markbook-core';
+import { projectCardLeaf } from './directives/project-card.js';
+import { links } from './directives/links.js';
+import { aboutItem } from './directives/about-item.js';
+import { sectionOpen } from './directives/section-open.js';
+import { sectionClose } from './directives/section-close.js';
 
 export default defineConfig({
   description: 'Engineering leader building software and teams. Currently leading Fluent UI at Microsoft.',
@@ -13,8 +18,14 @@ export default defineConfig({
   themeColor: '#4286f4',
   llmsButtons: false,
   search: false,
+  directives: {
+    'project-card': { type: 'leaf', handler: projectCardLeaf },
+    'about-item': { type: 'leaf', handler: aboutItem },
+    'section-open': { type: 'leaf', handler: sectionOpen },
+    'section-close': { type: 'leaf', handler: sectionClose },
+    links: { type: 'leaf', handler: links },
+  },
   transformHtml: (html, page) => {
-    // Fix canonical and og:url for homepage: /index.html → /
     return html
       .replace(
         '<link rel="canonical" href="https://tudorpopa.com/index.html">',
