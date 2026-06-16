@@ -9,7 +9,7 @@ export default defineConfig({
   publicDir: 'public',
   layoutsDir: 'layouts',
   layout: 'default',
-  css: ['./public/assets/css/main.css'],
+  css: ['public/assets/css/main.css'],
   disableBaseCss: true,
   themeColor: '#4286f4',
   llmsButtons: false,
