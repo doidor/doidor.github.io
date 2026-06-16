@@ -9,5 +9,8 @@ const render = htmlTemplate(new URL('./section-close.html', import.meta.url));
  */
 export const sectionClose: DirectiveHandler = ({ attributes }) => {
   const gridClose = attributes.class !== undefined ? '</div>\n' : '';
-  return render({ gridClose });
+  return {
+    html: render({ gridClose }),
+    markdown: '',
+  };
 };

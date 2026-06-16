@@ -7,8 +7,13 @@ const render = htmlTemplate(new URL('./about-item.html', import.meta.url));
  * A single about/currently item with a bold label prefix.
  */
 export const aboutItem: DirectiveHandler = ({ attributes }) => {
-  return render({
-    label: escapeHtml(attributes.label ?? ''),
-    text: escapeHtml(attributes.text ?? ''),
-  });
+  const label = attributes.label ?? '';
+  const text = attributes.text ?? '';
+  return {
+    html: render({
+      label: escapeHtml(label),
+      text: escapeHtml(text),
+    }),
+    markdown: `**${label}** ${text}`,
+  };
 };

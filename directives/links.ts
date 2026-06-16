@@ -23,5 +23,10 @@ export const links: DirectiveHandler = () => {
     return `    <li><a href="${ah}" title="${at}"><i class="${ai}"></i> <span class="label">${label}</span></a></li>`;
   }).join('\n');
 
-  return render({ items });
+  const mdItems = LINKS.map(({ href, label }) => `- [${label}](${href})`).join('\n');
+
+  return {
+    html: render({ items }),
+    markdown: `## Links\n\n${mdItems}`,
+  };
 };

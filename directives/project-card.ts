@@ -8,9 +8,15 @@ const render = htmlTemplate(new URL('./project-card.html', import.meta.url));
  * Description passed as attribute since we can't nest containers.
  */
 export const projectCardLeaf: DirectiveHandler = ({ attributes }) => {
-  return render({
-    href: escapeAttribute(attributes.href ?? '#'),
-    name: escapeHtml(attributes.name ?? 'Project'),
-    desc: escapeHtml(attributes.desc ?? ''),
-  });
+  const href = attributes.href ?? '#';
+  const name = attributes.name ?? 'Project';
+  const desc = attributes.desc ?? '';
+  return {
+    html: render({
+      href: escapeAttribute(href),
+      name: escapeHtml(name),
+      desc: escapeHtml(desc),
+    }),
+    markdown: `[${name}](${href}) — ${desc}`,
+  };
 };

@@ -8,15 +8,18 @@ const render = htmlTemplate(new URL('./section-open.html', import.meta.url));
  * Must be paired with ::section-close.
  */
 export const sectionOpen: DirectiveHandler = ({ attributes }) => {
-  const label = escapeAttribute(attributes.label ?? '');
+  const label = attributes.label ?? '';
   const id = label.toLowerCase();
   const className = attributes.class ? escapeAttribute(attributes.class) : '';
   const gridOpen = className ? `\n<div class="${className}">` : '';
 
-  return render({
-    id,
-    icon: escapeAttribute(attributes.icon ?? ''),
-    label,
-    gridOpen,
-  });
+  return {
+    html: render({
+      id,
+      icon: escapeAttribute(attributes.icon ?? ''),
+      label,
+      gridOpen,
+    }),
+    markdown: `## ${label}`,
+  };
 };
