@@ -1,3 +1,3 @@
 # Tudor Popa's personal website
 
-This website is developed with [astro.build](https://astro.build/)
+Built with [Markbook](https://github.com/doidor/markbook) — agent-first, markdown-first static site engine.

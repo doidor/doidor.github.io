@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ browserTitle }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132505107-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-132505107-1');
+  </script>
+  {{ head }}
+</head>
+<body>
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </button>
+  <div id="bg"></div>
+  <div id="main">
+    <article data-pagefind-body>
+      {{ content }}
+    </article>
+  </div>
+  {{ bodyEnd }}
+  <script>
+    // Theme toggle
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+          var current = document.documentElement.getAttribute('data-theme');
+          var isDark = current === 'dark' ||
+            (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var next = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      });
+    })();
+
+    // Accent color randomization
+    const BG_COLORS = ['#302b63','#4286f4','#373B44','#4A00E0','#2ebf91','#8360c3','#43C6AC','#516395'];
+    const currentColor = BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)].substr(1);
+
+    // Console easter egg
+    (function() {
+      const consoleColor = `background: #${currentColor}; color: white;`;
+      const style = {
+        header: `text-shadow: 1px 1px gray; font-size: 25px; ${consoleColor} padding: 4px 12px;`,
+        normal: `font-weight: bold; font-size: 14px;`,
+      };
+      console.log('%cHello there!', style.header);
+      console.log("%cSince you've also found this part of the site, let me just give you my links again:", style.normal);
+      console.log('');
+      console.log('%c- Resume: https://github.com/doidor/resume/blob/master/resume.pdf', style.normal);
+      console.log('%c- LinkedIn: https://www.linkedin.com/in/tdrpopa/', style.normal);
+      console.log('%c- Mail: tdr.popa@gmail.com', style.normal);
+      console.log('%c- GitHub: https://github.com/doidor', style.normal);
+      console.log('%c- Medium: https://medium.com/@tdr.popa', style.normal);
+      console.log('%c- YouTube: https://www.youtube.com/@doidor', style.normal);
+      console.log('');
+      console.log('%cCheers!', style.normal);
+    })();
+
+    // Set accent color as CSS variable and bg bar
+    var bg = document.querySelector('#bg');
+    bg.style.background = '#' + currentColor;
+    document.documentElement.style.setProperty('--accent', '#' + currentColor);
+
+    // Dynamic favicon
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = '/assets/ico/favicon_' + currentColor + '.ico';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</body>
+</html>
