@@ -1,4 +1,6 @@
-import { escapeAttribute, type DirectiveHandler } from '@doidor/markbook-core';
+import { escapeAttribute, htmlTemplate, type DirectiveHandler } from '@doidor/markbook-core';
+
+const render = htmlTemplate(new URL('./section-open.html', import.meta.url));
 
 /**
  * ::section-open{icon="fas fa-briefcase" label="Currently" class="about-grid"}
@@ -6,12 +8,15 @@ import { escapeAttribute, type DirectiveHandler } from '@doidor/markbook-core';
  * Must be paired with ::section-close.
  */
 export const sectionOpen: DirectiveHandler = ({ attributes }) => {
-  const icon = escapeAttribute(attributes.icon ?? '');
   const label = escapeAttribute(attributes.label ?? '');
   const id = label.toLowerCase();
   const className = attributes.class ? escapeAttribute(attributes.class) : '';
   const gridOpen = className ? `\n<div class="${className}">` : '';
 
-  return `<section id="${id}">
-<div class="section-label"><i class="${icon}"></i> ${label}</div>${gridOpen}`;
+  return render({
+    id,
+    icon: escapeAttribute(attributes.icon ?? ''),
+    label,
+    gridOpen,
+  });
 };

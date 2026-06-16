@@ -1,4 +1,6 @@
-import { escapeHtml, escapeAttribute, type DirectiveHandler } from '@doidor/markbook-core';
+import { escapeHtml, escapeAttribute, htmlTemplate, type DirectiveHandler } from '@doidor/markbook-core';
+
+const render = htmlTemplate(new URL('./project-card.html', import.meta.url));
 
 /**
  * ::project-card{href="..." name="..." desc="..."}
@@ -6,14 +8,9 @@ import { escapeHtml, escapeAttribute, type DirectiveHandler } from '@doidor/mark
  * Description passed as attribute since we can't nest containers.
  */
 export const projectCardLeaf: DirectiveHandler = ({ attributes }) => {
-  const href = escapeAttribute(attributes.href ?? '#');
-  const name = escapeHtml(attributes.name ?? 'Project');
-  const desc = escapeHtml(attributes.desc ?? '');
-  return `<a class="project-card" href="${href}" target="_blank" rel="noopener">
-<div class="project-header">
-<span class="project-name">${name}</span>
-<i class="fas fa-external-link-alt project-external"></i>
-</div>
-<p class="project-desc">${desc}</p>
-</a>`;
+  return render({
+    href: escapeAttribute(attributes.href ?? '#'),
+    name: escapeHtml(attributes.name ?? 'Project'),
+    desc: escapeHtml(attributes.desc ?? ''),
+  });
 };
