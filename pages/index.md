@@ -5,16 +5,7 @@ description: Engineering leader building software and teams. Currently leading F
 layout: default
 ---
 
-<section id="about">
-  <p>
-    I build software and teams. Currently leading Fluent UI at Microsoft.
-    Previously CTO, co-founder, and individual contributor across a range of industries.
-    I care about shipping end-to-end, growing engineers, and staying curious - lately about AI and LLMs.
-    When I'm not building, I'm playing guitar or bass.
-  </p>
-</section>
-
-<div class="divider"></div>
+::about-section{text="I build software and teams. Currently leading Fluent UI at Microsoft. Previously CTO, co-founder, and individual contributor across a range of industries. I care about shipping end-to-end, growing engineers, and staying curious - lately about AI and LLMs. When I'm not building, I'm playing guitar or bass."}
 
 :::section{icon="fas fa-briefcase" label="Currently" class="about-grid"}
 ::about-item{label="Role:" text="Principal Engineering Manager at Microsoft, leading Fluent UI"}
