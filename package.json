@@ -8,7 +8,7 @@
     "preview": "npx markbook preview"
   },
   "devDependencies": {
-    "@doidor/markbook": "^0.4.1",
-    "@doidor/markbook-core": "^0.4.1"
+    "@doidor/markbook": "^0.4.2",
+    "@doidor/markbook-core": "^0.4.2"
   }
 }
