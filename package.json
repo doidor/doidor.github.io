@@ -1,17 +1,14 @@
 {
   "name": "@doidor/homepage",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "format": "prettier -w .",
-    "format:check": "prettier -c ."
+    "dev": "npx markbook dev",
+    "build": "npx markbook build",
+    "preview": "npx markbook preview"
   },
   "devDependencies": {
-    "astro": "^5.3.0",
-    "prettier": "^2.7.1"
+    "@doidor/markbook": "^0.4.2",
+    "@doidor/markbook-core": "^0.4.2"
   }
 }
