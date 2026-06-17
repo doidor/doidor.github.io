@@ -25,7 +25,22 @@
   <div id="bg"></div>
   <div id="main">
     <article>
+      <header id="header">
+        <h1>{{ title }}</h1>
+        <p class="role">{{ frontmatter.subtitle }}</p>
+      </header>
+
+      <section id="about">
+        <p>{{ description }}</p>
+      </section>
+
+      <div class="divider"></div>
+
       {{ content }}
+
+      <footer id="footer">
+        <span class="copyright">&copy; Tudor Popa</span>
+      </footer>
     </article>
   </div>
   {{ bodyEnd }}
