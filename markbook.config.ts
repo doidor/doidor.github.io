@@ -3,6 +3,7 @@ import { projectCardLeaf } from './directives/project-card.js';
 import { links } from './directives/links.js';
 import { aboutItem } from './directives/about-item.js';
 import { section } from './directives/section.js';
+import { aboutSection } from './directives/about-section.js';
 
 export default defineConfig({
   title: 'Tudor Popa',
@@ -22,6 +23,7 @@ export default defineConfig({
     'project-card': { type: 'leaf', handler: projectCardLeaf },
     'about-item': { type: 'leaf', handler: aboutItem },
     section: { type: 'container', handler: section },
+    'about-section': { type: 'leaf', handler: aboutSection },
     links: { type: 'leaf', handler: links },
   },
 });
