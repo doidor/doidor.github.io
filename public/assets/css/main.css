@@ -129,7 +129,7 @@ body {
   padding: 3rem 1.5rem;
 }
 
-.container {
+#main article {
   max-width: 640px;
   width: 100%;
 }
@@ -163,7 +163,6 @@ body {
   font-size: 0.95rem;
   line-height: 1.85;
   color: var(--text);
-  max-width: 560px;
 }
 
 .divider {
